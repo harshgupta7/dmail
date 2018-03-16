@@ -6,7 +6,7 @@ class UserRegister(Resource):
 
 	parser = reqparse.RequestParser()
 	parser.add_argument('username', type=str, required=True, help='username is required')
-	parser.add_argument('pub_key', type=str, required=True, help='password is required')
+	parser.add_argument('pub_key', type=str, required=True, help='pub_key is required')
 
 
 
@@ -14,7 +14,7 @@ class UserRegister(Resource):
 	def post(self):
 	"""create new user"""
 
-		data = Item.parser.parse_args()
+		data = UserRegister.parser.parse_args()
 
 		if UserModel.find_by_username(data['username']):
 
@@ -47,7 +47,30 @@ class UserRegister(Resource):
 
 		return user.json()
 
+
+class UserCheck(Resource):
+
+	parser = reqparse.RequestParser()
+	parser.add_argument('pub_key', type=str, required=True, help='pub_key is required')
+
+	def get(self):
+
+		data = UserCheck.parser.parse_args()
+
+		user = UserModel.find_by_pubkey(data['pub_key'])
+
+		if user:
+
+			return user.json()
+
+		return {'message':'no user exists'}
+
 	
+
+
+
+
+
 
 
 

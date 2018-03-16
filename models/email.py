@@ -5,7 +5,7 @@ class PendingEmails(db.Model):
 	__tablename__ = 'pendingemails'
 
 	id = db.Column(db.Integer, primary_key=True)
-	to = db.Column(db.String(80), nullable=False)
+	to = db.Column(db.String(500), nullable=False)
 	email_hash = db.Column(db.String(500), nullable=False)
 
 
@@ -25,6 +25,10 @@ class PendingEmails(db.Model):
 
 		db.session.delete(self)
 		db.session.commit()
+
+	def json():
+
+		return {'to':self.to, 'email_hash':self.email_hash}
 
 
 	@staticmethod
