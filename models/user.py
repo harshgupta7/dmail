@@ -18,6 +18,10 @@ class UserModel(db.Model):
 		db.session.add(self)
 		db.session.commit()
 
+	def json(self):
+
+		return {'username':self.username, 'pub_key':self.pub_key}
+
 	def delete(self):
 
 		db.session.delete(self)
@@ -38,7 +42,7 @@ class UserModel(db.Model):
 
 		return UserModel.query.filter_by(id=_id).first()
 
-	
+
 
 
 
