@@ -12,7 +12,6 @@ class UserRegister(Resource):
 
 
 	def post(self):
-	"""create new user"""
 
 		data = UserRegister.parser.parse_args()
 
@@ -31,7 +30,6 @@ class UserRegister(Resource):
 
 
 	def get(self):
-	"""check if user exists"""
 
 		data = Item.parser.parse_args()
 

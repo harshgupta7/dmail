@@ -15,6 +15,11 @@ class PendingEmails(db.Model):
 		self.email_hash = email_hash
 
 
+	def get_email_hash(self):
+
+		return self.email_hash
+
+
 
 	def save_to_db(self):
 
