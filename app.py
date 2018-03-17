@@ -2,7 +2,7 @@ import os
 from flask import Flask 
 from flask_restful import Api
 from resources.EmailResource import EmailServer, CheckEmail
-from resources.UserResource import UserRegister, UserCheck, DeleteUser
+from resources.UserResource import UserRegister, UserCheck, DeleteUser, GetAllUsers
 
 app = Flask(__name__)
 api = Api(app)
@@ -17,6 +17,7 @@ api.add_resource(CheckEmail,'/checkemail/<string:pub_key>')
 api.add_resource(UserRegister,'/register')
 api.add_resource(UserCheck,'/finduser')
 api.add_resource(DeleteUser, '/delete/<string:name>')
+api.add_resource(GetAllUsers, '/getall')
 
 
 

@@ -63,7 +63,12 @@ class DeleteUser(Resource):
 
 
 
-	
+class GetAllUsers(Resource):
+
+	def get(self):
+
+		result = UserModel.query.all()
+		return {'users':[user.json() for x in result]}
 
 
 
