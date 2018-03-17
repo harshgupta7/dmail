@@ -29,8 +29,6 @@ class UserRegister(Resource):
 		return user.json()
 
 
-
-
 class UserCheck(Resource):
 
 	parser = reqparse.RequestParser()
@@ -47,6 +45,23 @@ class UserCheck(Resource):
 			return user.json()
 
 		return {'message':'no user exists'}
+
+
+class DeleteUser(Resource):
+
+	def delete(self, name):
+
+		user = UserModel.find_by_username(name)
+
+		if user:
+
+			user.delete()
+
+		return {'message':'user deleted'}
+
+
+
+
 
 	
 
