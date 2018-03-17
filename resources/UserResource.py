@@ -42,6 +42,21 @@ class UserCheck(Resource):
 		return {'message':'no user exists'}
 
 
+class UserGetByUsername(Resource):
+
+	def get(self, username):
+
+		user = UserModel.find_by_username(username)
+
+		if user:
+
+			return user.json()
+
+		return {'message':'no such user exists'}
+
+
+
+
 class DeleteUser(Resource):
 
 	def delete(self, name):
