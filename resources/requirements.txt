@@ -1,4 +1,0 @@
-FLask
-Flask-RESTful
-Flask-SQLAlchemy
-uwsgi

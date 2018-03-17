@@ -2,4 +2,4 @@ FLask
 Flask-RESTful
 Flask-SQLAlchemy
 uwsgi
-pyscopg2
+psycopg2
