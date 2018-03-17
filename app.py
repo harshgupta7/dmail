@@ -10,9 +10,6 @@ app.secretkey = 'trenton alphanso miriam trotsky'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL','sqlite:///data.db')
 
-@app.before_first_request
-def create_table():
-	db.create_all()
 
 
 api.add_resource(EmailServer, '/send')
@@ -29,9 +26,4 @@ if __name__ == '__main__':
 
 	from db import db 
 	db.init_app(app)
-
-
-	
-
-
 	app.run(port=5000,debug=True)
