@@ -6,7 +6,7 @@ class UserModel(db.Model):
 
 	id = db.Column(db.Integer, primary_key=True)
 	username = db.Column(db.String(80), nullable=False)
-	pub_key = db.Column(db.String(400), nullable=False)
+	pub_key = db.Column(db.Text, nullable=False)
 
 	def __init__(self, username, pub_key):
 

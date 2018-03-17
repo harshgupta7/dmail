@@ -5,8 +5,8 @@ class PendingEmails(db.Model):
 	__tablename__ = 'pendingemails'
 
 	id = db.Column(db.Integer, primary_key=True)
-	to = db.Column(db.String(500), nullable=False)
-	email_hash = db.Column(db.String(500), nullable=False)
+	to = db.Column(db.Text, nullable=False)
+	email_hash = db.Column(db.Text, nullable=False)
 
 
 	def __init__(self, to, email_hash):
