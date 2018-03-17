@@ -26,24 +26,9 @@ class UserRegister(Resource):
 
 		user = UserModel(data['username'], data['pub_key'])
 		user.save_to_db()
-		return item.json()
-
-
-	def get(self):
-
-		data = Item.parser.parse_args()
-
-		user = UserModel.find_by_username(data['username'])
-
-		if not user:
-
-			return {'message':'no such user exists'}
-
-		if user.pub_key != data['pub_key']:
-
-			return {'message':'no such user exists'}
-
 		return user.json()
+
+
 
 
 class UserCheck(Resource):
@@ -51,7 +36,7 @@ class UserCheck(Resource):
 	parser = reqparse.RequestParser()
 	parser.add_argument('pub_key', type=str, required=True, help='pub_key is required')
 
-	def get(self):
+	def post(self):
 
 		data = UserCheck.parser.parse_args()
 

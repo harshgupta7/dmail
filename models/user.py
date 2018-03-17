@@ -8,7 +8,7 @@ class UserModel(db.Model):
 	username = db.Column(db.String(80), nullable=False)
 	pub_key = db.Column(db.String(400), nullable=False)
 
-	def __init__(self, username, password):
+	def __init__(self, username, pub_key):
 
 		self.username = username
 		self.pub_key = pub_key

@@ -31,7 +31,7 @@ class PendingEmails(db.Model):
 		db.session.delete(self)
 		db.session.commit()
 
-	def json():
+	def json(self):
 
 		return {'to':self.to, 'email_hash':self.email_hash}
 

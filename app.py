@@ -11,12 +11,12 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL','sqlite:///data.db')
 
 @app.before_first_request
-	def create_table():
-		db.create_all()
+def create_table():
+	db.create_all()
 
 
 api.add_resource(EmailServer, '/send')
-api.add_resource(CheckEmail,'/checkemail')
+api.add_resource(CheckEmail,'/checkemail/<string:pub_key>')
 api.add_resource(UserRegister,'/register')
 api.add_resource(UserCheck,'/finduser')
 

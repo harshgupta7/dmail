@@ -27,34 +27,17 @@ class EmailServer(Resource):
 		return email.json()
 
 
-	def get(self):
-
-		"""check if an email is still not downloaded by a particular user"""
-
-		data = EmailServer.parser.parse_args()
-
-		if PendingEmails.find_by_pubkey(data['email_hash']):
-
-			if PendingEmails.find_by_to(data['pub_key']):
-
-				return {'message':'email not yet downloaded'}
-
-		return {'message':'email not in server'}
-
 
 
 
 class CheckEmail(Resource):
 
-	parser = reqparse.RequestParser()
 
-	parser.add_argument('pub_key')
+	def get(self, pub_key):
 
-	def get(self):
+		
 
-		data = EmailServer.parser.parse_args()
-
-		emails = PendingEmails.find_by_to(data['pub_key'])
+		emails = PendingEmails.find_by_to(pub_key)
 
 		if not emails:
 
