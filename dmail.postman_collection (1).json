@@ -1,0 +1,223 @@
+{
+	"info": {
+		"name": "dmail",
+		"_postman_id": "0fce0828-b534-8f6b-63d7-3cb71268ef1d",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/send",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"pub_key\":\"w8eur\",\n\t\"email_hash\":\"asd\"\n}\n\n"
+				},
+				"url": {
+					"raw": "https://dmail-hack-mit.herokuapp.com/send",
+					"protocol": "https",
+					"host": [
+						"dmail-hack-mit",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"send"
+					]
+				},
+				"description": "send email\nneed pub_key of receiver, email hash"
+			},
+			"response": []
+		},
+		{
+			"name": "/register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\":\"HughTaylor\",\n\t\"pub_key\":\"w8eur\"\n}"
+				},
+				"url": {
+					"raw": "https://dmail-hack-mit.herokuapp.com/register",
+					"protocol": "https",
+					"host": [
+						"dmail-hack-mit",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"register"
+					]
+				},
+				"description": "register a user"
+			},
+			"response": []
+		},
+		{
+			"name": "/finduser",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"pub_key\":\"w8eur\"\n}"
+				},
+				"url": {
+					"raw": "https://dmail-hack-mit.herokuapp.com/finduser",
+					"protocol": "https",
+					"host": [
+						"dmail-hack-mit",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"finduser"
+					]
+				},
+				"description": "Give me public key, return {username:, pub_key:,}"
+			},
+			"response": []
+		},
+		{
+			"name": "/checkemail",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\":\"HughTaylor\",\n\t\"pub_key\":\"w8eur\"\n}"
+				},
+				"url": {
+					"raw": "https://dmail-hack-mit.herokuapp.com/checkemail/w8eur",
+					"protocol": "https",
+					"host": [
+						"dmail-hack-mit",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"checkemail",
+						"w8eur"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/getall",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\":\"HughTaylor\",\n\t\"pub_key\":\"w8eur\"\n}"
+				},
+				"url": {
+					"raw": "https://dmail-hack-mit.herokuapp.com/getall",
+					"protocol": "https",
+					"host": [
+						"dmail-hack-mit",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"getall"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/deleta/kaan2",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\":\"HughTaylor\",\n\t\"pub_key\":\"w8eur\"\n}"
+				},
+				"url": {
+					"raw": "https://dmail-hack-mit.herokuapp.com/delete/kaan2",
+					"protocol": "https",
+					"host": [
+						"dmail-hack-mit",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"delete",
+						"kaan2"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/getbyname/",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\":\"HughTaylor\",\n\t\"pub_key\":\"w8eur\"\n}"
+				},
+				"url": {
+					"raw": "https://dmail-hack-mit.herokuapp.com/getbyname/kaan2",
+					"protocol": "https",
+					"host": [
+						"dmail-hack-mit",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"getbyname",
+						"kaan2"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
